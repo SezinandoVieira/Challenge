@@ -1,0 +1,16 @@
+#Aqui é o gatilho para rodar a pipeline da aplicação
+trigger:
+- main
+
+#Este estágio é onde eu defini em quais branches as mudanças dispararão a execução da pipeline
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'RegistroContainerAzure' # Serviço de registro de containers que sera feit o push da imagem
+    repository: 'my-repository' #Aqui é onde a imagem será armazenada
+    command: 'buildAndPush' #O comando que vai ser executado na pipeline
+    Dockerfile: '**/Dockerfile' #Caminho no qual a imagem está sendo construida
+    tags: '$(Build.BuildId)' #Tags que vão ser aplicadas na imagem, aqui estou usando o ID da build para isso
