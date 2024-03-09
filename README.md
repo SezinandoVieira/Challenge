@@ -3,7 +3,7 @@ This repository was created to try and complete Bry's challenge.
 
 ## About Terraform
 
-In this section I created the main file ([https://github.com/SezinandoVieira/Challenge/blob/master/Terraform/main.tf](main.tf) that will be responsible for building the infrastructure, which in the case of this challenge, I chose Azure. All the resources are modularized and are called from the main.tf file
+In this section I created the main file ([main.tf](https://github.com/SezinandoVieira/Challenge/blob/master/Terraform/main.tf)) that will be responsible for building the infrastructure, which in the case of this challenge, I chose Azure. All the resources are modularized and are called from the main.tf file
 
 I chose this provider because I had never worked with it and was curious to know how the tool and its resources worked
 
